@@ -20,6 +20,16 @@ public class ManejadorFrame {
         jFrameManejadores.add(panel);
         jFrameManejadores.setVisible(true);
         sumar();
+        restar();
+    }
+
+    private static void restar() {
+        btnRestar.addActionListener(e -> {
+            x = obtenerX();
+            y = obtenerY();
+            int result = x - y;
+            txtFieldResult.setText(String.valueOf(result));
+        });
     }
 
     private static int obtenerX() {
