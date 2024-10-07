@@ -21,6 +21,16 @@ public class ManejadorFrame {
         jFrameManejadores.setVisible(true);
         sumar();
         restar();
+        multiplicar();
+    }
+
+    private static void multiplicar() {
+        btnMultiplicar.addActionListener(e -> {
+            x = obtenerX();
+            y = obtenerY();
+            int result = x * y;
+            txtFieldResult.setText(String.valueOf(result));
+        });
     }
 
     private static void restar() {
