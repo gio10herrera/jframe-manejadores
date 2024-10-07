@@ -23,6 +23,15 @@ public class ManejadorFrame {
         restar();
         multiplicar();
         dividir();
+        raizX();
+    }
+
+    private static void raizX() {
+        btnRaizX.addActionListener(e -> {
+            x = obtenerX();
+            double resultado = Math.sqrt(x);
+            txtFieldResult.setText(String.valueOf(resultado));
+        });
     }
 
     private static void dividir() {
