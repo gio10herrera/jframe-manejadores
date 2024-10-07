@@ -1,36 +1,60 @@
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ManejadorFrame {
     static JFrame jFrameManejadores;
     static JLabel txtLabelX, txtLabelY, txtLabelResult;
     static JTextField txtFieldX, txtFieldY, txtFieldResult;
     static JButton btnSumar, btnRestar, btnMultiplicar, btnDividir, btnRaizX, btnRaizY, btnXaLaY, btnYaLaX, btnXModY;
+    static int x, y;
+    static JPanel panel = new JPanel(new GridLayout(5, 3, 5, 5));
 
     public static void main(String[] args) {
         inicializarJframeManejador();
         instanciarComponentes();
-        jFrameManejadores.setLayout(new GridLayout(5, 3, 5, 5));
-        agregrarComponentesAlFrame();
+        panel.setBorder(new EmptyBorder(5, 5, 5, 5));
+        agregrarComponentesAlPanel();
+        jFrameManejadores.add(panel);
         jFrameManejadores.setVisible(true);
+        sumar();
     }
 
-    private static void agregrarComponentesAlFrame() {
-        jFrameManejadores.add(txtLabelX);
-        jFrameManejadores.add(txtLabelY);
-        jFrameManejadores.add(txtLabelResult);
-        jFrameManejadores.add(txtFieldX);
-        jFrameManejadores.add(txtFieldY);
-        jFrameManejadores.add(txtFieldResult);
-        jFrameManejadores.add(btnSumar);
-        jFrameManejadores.add(btnRestar);
-        jFrameManejadores.add(btnMultiplicar);
-        jFrameManejadores.add(btnDividir);
-        jFrameManejadores.add(btnRaizX);
-        jFrameManejadores.add(btnRaizY);
-        jFrameManejadores.add(btnXaLaY);
-        jFrameManejadores.add(btnYaLaX);
-        jFrameManejadores.add(btnXModY);
+    private static int obtenerX() {
+        return Integer.parseInt(txtFieldX.getText());
+    }
+
+    private static int obtenerY() {
+        return Integer.parseInt(txtFieldY.getText());
+    }
+
+    private static void sumar() {
+        btnSumar.addActionListener(e -> {
+            x = obtenerX();
+            y = obtenerY();
+            int result = x + y;
+            txtFieldResult.setText(String.valueOf(result));
+        });
+    }
+
+    private static void agregrarComponentesAlPanel() {
+        panel.add(txtLabelX);
+        panel.add(txtLabelY);
+        panel.add(txtLabelResult);
+        panel.add(txtFieldX);
+        panel.add(txtFieldY);
+        panel.add(txtFieldResult);
+        panel.add(btnSumar);
+        panel.add(btnRestar);
+        panel.add(btnMultiplicar);
+        panel.add(btnDividir);
+        panel.add(btnRaizX);
+        panel.add(btnRaizY);
+        panel.add(btnXaLaY);
+        panel.add(btnYaLaX);
+        panel.add(btnXModY);
     }
 
     private static void instanciarComponentes() {
