@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class ManejadorFrame {
     static JFrame jFrameManejadores;
@@ -8,8 +9,28 @@ public class ManejadorFrame {
 
     public static void main(String[] args) {
         inicializarJframeManejador();
-        jFrameManejadores.setVisible(true);
         instanciarComponentes();
+        jFrameManejadores.setLayout(new GridLayout(5, 3, 5, 5));
+        agregrarComponentesAlFrame();
+        jFrameManejadores.setVisible(true);
+    }
+
+    private static void agregrarComponentesAlFrame() {
+        jFrameManejadores.add(txtLabelX);
+        jFrameManejadores.add(txtLabelY);
+        jFrameManejadores.add(txtLabelResult);
+        jFrameManejadores.add(txtFieldX);
+        jFrameManejadores.add(txtFieldY);
+        jFrameManejadores.add(txtFieldResult);
+        jFrameManejadores.add(btnSumar);
+        jFrameManejadores.add(btnRestar);
+        jFrameManejadores.add(btnMultiplicar);
+        jFrameManejadores.add(btnDividir);
+        jFrameManejadores.add(btnRaizX);
+        jFrameManejadores.add(btnRaizY);
+        jFrameManejadores.add(btnXaLaY);
+        jFrameManejadores.add(btnYaLaX);
+        jFrameManejadores.add(btnXModY);
     }
 
     private static void instanciarComponentes() {
