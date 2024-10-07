@@ -27,6 +27,16 @@ public class ManejadorFrame {
         raizY();
         xElevadoALaY();
         yElevadoALaX();
+        xModY();
+    }
+
+    private static void xModY() {
+        btnXModY.addActionListener(e -> {
+            x = obtenerX();
+            y = obtenerY();
+            int result = x % y;
+            txtFieldResult.setText(String.valueOf(result));
+        });
     }
 
     private static void yElevadoALaX() {
