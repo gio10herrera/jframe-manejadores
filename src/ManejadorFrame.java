@@ -25,6 +25,16 @@ public class ManejadorFrame {
         dividir();
         raizX();
         raizY();
+        xElevadoALaY();
+    }
+
+    private static void xElevadoALaY() {
+        btnXaLaY.addActionListener(e -> {
+            x = obtenerX();
+            y = obtenerY();
+            int result = (int) Math.pow(x, y);
+            txtFieldResult.setText(String.valueOf(result));
+        });
     }
 
     private static void raizY() {
