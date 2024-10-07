@@ -59,11 +59,17 @@ public class ManejadorFrame {
 
     private static void instanciarComponentes() {
         txtLabelX = new JLabel("X");
+        txtLabelX.setHorizontalAlignment(SwingConstants.CENTER);
         txtLabelY = new JLabel("Y");
+        txtLabelY.setHorizontalAlignment(SwingConstants.CENTER);
         txtLabelResult = new JLabel("Resultado");
+        txtLabelResult.setHorizontalAlignment(SwingConstants.CENTER);
         txtFieldX = new JTextField();
+        txtFieldX.setHorizontalAlignment(SwingConstants.CENTER);
         txtFieldY = new JTextField();
+        txtFieldY.setHorizontalAlignment(SwingConstants.CENTER);
         txtFieldResult = new JTextField();
+        txtFieldResult.setHorizontalAlignment(SwingConstants.CENTER);
         txtFieldResult.setEditable(false);
         btnSumar = new JButton("+");
         btnRestar = new JButton("-");
