@@ -22,6 +22,16 @@ public class ManejadorFrame {
         sumar();
         restar();
         multiplicar();
+        dividir();
+    }
+
+    private static void dividir() {
+        btnDividir.addActionListener(e -> {
+            x = obtenerX();
+            y = obtenerY();
+            float resultado = (float) x / y;
+            txtFieldResult.setText(String.valueOf(resultado));
+        });
     }
 
     private static void multiplicar() {
