@@ -24,6 +24,15 @@ public class ManejadorFrame {
         multiplicar();
         dividir();
         raizX();
+        raizY();
+    }
+
+    private static void raizY() {
+        btnRaizY.addActionListener(e -> {
+            int y = obtenerY();
+            double resultado = Math.sqrt(y);
+            txtFieldResult.setText(String.valueOf(resultado));
+        });
     }
 
     private static void raizX() {
